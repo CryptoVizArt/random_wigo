@@ -191,7 +191,7 @@ class WigoMetricsCollector:
         df.to_csv(self.csv_file, mode='a', header=not os.path.exists(self.csv_file), index=False)
         self.update_plots()
 
-    def get_token_metrics(self, start_date, end_date, chunk_size=1000):  # Reduced chunk size for GetBlock
+    def get_token_metrics(self, start_date, end_date, chunk_size=10000):  # Reduced chunk size for GetBlock
         """Collect token metrics using GetBlock RPC"""
         print(f"Finding blocks for date range: {start_date.date()} to {end_date.date()}")
 
@@ -272,7 +272,7 @@ def main():
 
     # Set date range
     end_date = datetime.now()
-    start_date = end_date - timedelta(days=180)
+    start_date = end_date - timedelta(days=172)
 
     # Collect metrics
     df = collector.get_token_metrics(start_date, end_date)
