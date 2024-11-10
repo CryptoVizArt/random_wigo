@@ -1,3 +1,0 @@
-start_block=81137133
-end_block=96682495
-last_processed=81138133
